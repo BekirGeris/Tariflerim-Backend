@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,12 +34,12 @@ public class RepiceController {
 	}
 	
 	@GetMapping("/getByUserId")
-	public DataResult<List<Recipe>> getByUserId(int userId){
+	public DataResult<List<Recipe>> getByUserId(@RequestBody int userId){
 		return recipeService.getByUserId(userId);
 	}
 	
-	@GetMapping("/add")
-	public Result add(Recipe recipe) {
+	@PostMapping("/add")
+	public Result add(@RequestBody Recipe recipe) {
 		return recipeService.add(recipe);
 	}
 	

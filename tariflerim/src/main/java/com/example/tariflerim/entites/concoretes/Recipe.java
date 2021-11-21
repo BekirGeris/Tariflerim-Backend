@@ -31,9 +31,13 @@ public class Recipe {
 	@Column(name = "name")
     private String name;
 
-	@Column(name = "date")
-    private Date date = new Date();
-
+	@Column(name = "tarif")
+    private String tarif;
+	
 	@Column(name = "image")
-    private byte[] image;
+    private String image;
+	
+	@Column(name = "date")
+    private String date = new Date().toString();
+
 }
