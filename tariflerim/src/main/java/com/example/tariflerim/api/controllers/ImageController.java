@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,7 @@ import com.example.tariflerim.entites.concoretes.Image;
 @RestController
 @RequestMapping("/api/imageControllers")
 public class ImageController{
-
+	
 	ImageService imageService;
 	
 	@Autowired
@@ -39,7 +40,7 @@ public class ImageController{
 	}
 
 	@PostMapping("/add")
-	public Result add(Image image) {
+	public Result add(@RequestBody Image image) {
 		return imageService.add(image);
 	}
 

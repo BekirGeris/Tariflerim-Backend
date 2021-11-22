@@ -33,8 +33,8 @@ public class RepiceController {
 		return recipeService.getAll();
 	}
 	
-	@GetMapping("/getByUserId")
-	public DataResult<List<Recipe>> getByUserId(@RequestBody int userId){
+	@GetMapping("/getTarifsWithUserId")
+	public DataResult<List<Recipe>> getTarifsWithUserId(int userId){
 		return recipeService.getByUserId(userId);
 	}
 	
